@@ -7,8 +7,8 @@ toc_title: HDFS
 
 # HDFS {#table_engines-hdfs}
 
-该引擎提供了集成 [Apache Hadoop](https://en.wikipedia.org/wiki/Apache_Hadoop) 生态系统通过允许管理数据 [HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)通过ClickHouse. 这个引擎是相似的
-到 [文件](../special/file.md#table_engines-file) 和 [URL](../special/url.md#table_engines-url) 引擎，但提供Hadoop特定的功能。
+该引擎提供集成 [Apache Hadoop](https://en.wikipedia.org/wiki/Apache_Hadoop) 生态系统来让ClickHouse可以管理 [HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)上的数据. 
+这个引擎与[File](../special/file.md#table_engines-file) 和 [URL](../special/url.md#table_engines-url) 引擎相似，但提供Hadoop相关的特定功能。
 
 ## 用途 {#usage}
 
@@ -17,9 +17,10 @@ ENGINE = HDFS(URI, format)
 ```
 
 该 `URI` 参数是HDFS中的整个文件URI。
-该 `format` 参数指定一种可用的文件格式。 执行
-`SELECT` 查询时，格式必须支持输入，并执行
-`INSERT` queries – for output. The available formats are listed in the
+该 `format` 参数指定一种可用的文件格式。 
+执行`SELECT` 查询时，格式必须支持输入，并执行`INSERT` queries – for output.
+
+The available formats are listed in the
 [格式](../../../interfaces/formats.md#formats) 科。
 路径部分 `URI` 可能包含水珠。 在这种情况下，表将是只读的。
 
